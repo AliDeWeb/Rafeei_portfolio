@@ -9,7 +9,7 @@
         <title>Rafeei</title>
     </head>
     <body class="text-white">
-        <header class="h-dvh w-full bg-black">
+        <header class="relative h-dvh w-full bg-black">
             <div class="container h-full">
                 <div
                     class="flex items-center justify-between py-8"
@@ -18,7 +18,11 @@
                         <ul
                             class="lg:hover:child:text-[#FFB100] lg:hover:child:scale-110 lg:hover:child:px-4 child:transition-all child:duration-300 font-dana flex items-center justify-between gap-4 text-sm lg:gap-8 lg:text-base"
                         >
-                            <li><a href="#">درباره</a></li>
+                            <li>
+                                <a href="#about-me"
+                                    >درباره</a
+                                >
+                            </li>
                             <li><a href="#">رزومه</a></li>
                             <li>
                                 <a href="#">تعرفه ها</a>
@@ -42,7 +46,7 @@
                     />
                 </div>
                 <div
-                    class="fixed bottom-0 left-0 right-0 mx-auto w-3/4 py-4"
+                    class="absolute bottom-0 left-0 right-0 mx-auto w-3/4 py-4"
                 >
                     <div
                         class="flex flex-col items-center justify-between gap-4 md:flex-row"
@@ -90,6 +94,102 @@
                 </div>
             </div>
         </header>
+        <main>
+            <section
+                id="about-me"
+                class="flex h-dvh w-full items-center justify-center bg-white"
+            >
+                <div class="container">
+                    <div
+                        class="child:col-span-2 lg:child:col-span-1 grid grid-cols-2 items-center justify-items-center gap-4"
+                    >
+                        <div class="flex flex-col gap-10">
+                            <h2
+                                class="font-danaBold relative text-4xl text-black"
+                            >
+                                درباره من
+
+                                <span
+                                    class="absolute -bottom-5 right-0 size-3 bg-[#FFB100]"
+                                ></span>
+                            </h2>
+
+                            <p
+                                class="font-dana max-w-[550px] text-black"
+                            >
+                                لورم ایپسوم متن ساختگی با
+                                تولید سادگی نامفهوم از صنعت
+                                چاپ و با استفاده از طراحان
+                                گرافیک است. چاپگرها و متون
+                                بلکه روزنامه و مجله در ستون
+                                و سطرآنچنان که لازم است و
+                                برای شرایط فعلی تکنولوژی
+                                مورد نیاز و کاربردهای متنوع
+                                با هدف بهبود ابزارهای
+                                کاربردی می باشد. کتابهای
+                                زیادی در شصت و سه درصد
+                                گذشته، حال و آینده شناخت
+                                فراوان جامعه و متخصصان را می
+                                طلبد تا با نرم افزارها شناخت
+                                بیشتری را برای طراحان رایانه
+                                ای علی الخصوص طراحان خلاقی و
+                                فرهنگ پیشرو در زبان فارسی
+                                ایجاد کرد. در این صورت می
+                                توان امید داشت که تمام و
+                                دشواری موجود در ارائه
+                                راهکارها و شرایط سخت تایپ به
+                                پایان رسد وزمان مورد نیاز
+                                شامل حروفچینی دستاوردهای
+                                اصلی و جوابگوی سوالات
+                                پیوسته.
+                            </p>
+
+                            <div
+                                class="child:size-36 md:child:size-48 flex items-center justify-center gap-8"
+                            >
+                                <div
+                                    class="flex flex-col items-center justify-center rounded-xl border border-solid border-[#eeeeee]"
+                                >
+                                    <img
+                                        src="/public/icons/web-design.png"
+                                        alt="icon"
+                                        class="size-24"
+                                    />
+                                    <p
+                                        class="font-dana mt-4 text-center text-sm text-black"
+                                    >
+                                        مشاور تحصیلی
+                                    </p>
+                                </div>
+                                <div
+                                    class="flex flex-col items-center justify-center rounded-xl border border-solid border-[#eeeeee]"
+                                >
+                                    <img
+                                        src="/public/icons/web-design.png"
+                                        alt="icon"
+                                        class="size-24"
+                                    />
+                                    <p
+                                        class="font-dana mt-4 text-center text-sm text-black"
+                                    >
+                                        مشاور فردی
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="hidden w-[420px] items-center lg:flex"
+                        >
+                            <img
+                                class="object-cover"
+                                src="/public/icons/about-me.jpg"
+                                alt="about me pic"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
         <script type="module" src="/src/main.ts"></script>
     </body>

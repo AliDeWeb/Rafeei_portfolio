@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+    :root {
+        scroll-behavior: smooth;
+    }
+
     img {
         @apply size-full;
     }
