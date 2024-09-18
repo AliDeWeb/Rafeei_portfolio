@@ -6,9 +6,91 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0"
         />
-        <title>Vite + TS</title>
+        <title>Rafeei</title>
     </head>
-    <body class="bg-black">
+    <body class="text-white">
+        <header class="h-dvh w-full bg-black">
+            <div class="container h-full">
+                <div
+                    class="flex items-center justify-between py-8"
+                >
+                    <nav>
+                        <ul
+                            class="lg:hover:child:text-[#FFB100] lg:hover:child:scale-110 lg:hover:child:px-4 child:transition-all child:duration-300 font-dana flex items-center justify-between gap-4 text-sm lg:gap-8 lg:text-base"
+                        >
+                            <li><a href="#">درباره</a></li>
+                            <li><a href="#">رزومه</a></li>
+                            <li>
+                                <a href="#">تعرفه ها</a>
+                            </li>
+                            <li>
+                                <a href="tel:+989358306748"
+                                    >تماس</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                    <h1 class="font-danaBold text-2xl">
+                        <a href="/"> Rafeei </a>
+                    </h1>
+                </div>
+                <div class="h-[calc(100%-98px)]">
+                    <img
+                        class="object-cover"
+                        src="/public/images/character.jpg"
+                        alt="character"
+                    />
+                </div>
+                <div
+                    class="fixed bottom-0 left-0 right-0 mx-auto w-3/4 py-4"
+                >
+                    <div
+                        class="flex flex-col items-center justify-between gap-4 md:flex-row"
+                    >
+                        <div>
+                            <p
+                                class="font-dana text-center text-sm"
+                            >
+                                © 2022 | تمامی حقوق برای
+                                پوسته یکتا محفوظ است.
+                            </p>
+                        </div>
+                        <div
+                            class="child:size-6 flex items-center gap-4"
+                        >
+                            <a
+                                href="#"
+                                class="inline-block transition-all hover:scale-110"
+                            >
+                                <img
+                                    src="/public/icons/icons8-instagram.svg"
+                                    alt="icon"
+                                />
+                            </a>
+                            <a
+                                href="#"
+                                class="inline-block transition-all hover:scale-110"
+                            >
+                                <img
+                                    src="/public/icons/icons8-linkedin.svg"
+                                    alt="icon"
+                                />
+                            </a>
+                            <a
+                                href="#"
+                                class="inline-block transition-all hover:scale-110"
+                            >
+                                <img
+                                    src="/public/icons/icons8-twitter.svg"
+                                    alt="icon"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
         <script type="module" src="/src/main.ts"></script>
     </body>
 </html>

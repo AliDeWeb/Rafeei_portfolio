@@ -6,7 +6,17 @@ module.exports = {
             center: true,
             padding: '1rem',
         },
+        fontFamily: {
+            dana: 'dana',
+            danaBold: 'danaBold',
+            danaMedium: 'danaMedium',
+        },
         extend: {},
     },
-    plugins: [],
+    plugins: [
+        function ({ addVariant }) {
+            addVariant('child', '& > *');
+            addVariant('child-hover', '& > *:hover');
+        },
+    ],
 };
