@@ -7,6 +7,16 @@
         scroll-behavior: smooth;
     }
 
+    ::-webkit-scrollbar {
+        @apply w-[0.4vw];
+    }
+    ::-webkit-scrollbar-track {
+        @apply bg-[#eeeeee];
+    }
+    ::-webkit-scrollbar-thumb {
+        @apply rounded-xl bg-[#ffb100]/50 transition-all hover:bg-[#ffb100]/70 active:bg-[#ffb100];
+    }
+
     img {
         @apply size-full;
     }
