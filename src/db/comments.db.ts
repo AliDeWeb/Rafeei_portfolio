@@ -1,7 +1,7 @@
 type data =
     `${number} ${'روز' | 'هفته' | 'سال' | 'ساعت'} قبل`;
 
-interface comment {
+export interface comment {
     img?: string | undefined;
 
     name: string;

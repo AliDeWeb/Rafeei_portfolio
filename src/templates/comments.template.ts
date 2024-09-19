@@ -1,3 +1,5 @@
+import { comment } from '../db/comments.db';
+
 const commentTemplate = `
     <div
         class="select-none grid w-[300px] md:w-[340px] grid-cols-6 justify-center rounded-xl p-4 font-dana text-black shadow-lg mx-auto"
@@ -34,7 +36,7 @@ const commentTemplate = `
     </div>
 `;
 
-export const useCommentsTemplate = (
+const useCommentsTemplate = (
     comment: string,
     date: string,
     name: string,
@@ -51,4 +53,21 @@ export const useCommentsTemplate = (
     template = template.replace('%%PROFILE%%', profile);
 
     return template;
+};
+
+export const insertComments = (
+    el: comment,
+    element: HTMLDivElement,
+) => {
+    element.insertAdjacentHTML(
+        `beforeend`,
+        `<div class="swiper-slide">
+             ${useCommentsTemplate(
+                 el.comment,
+                 el.date,
+                 el.name,
+                 el?.img ||
+                     '/public/images/users/default.webp',
+             )}</div>`,
+    );
 };
