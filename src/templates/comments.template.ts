@@ -6,6 +6,7 @@ const commentTemplate = `
             class="col-span-2 flex size-16 h-max justify-center overflow-hidden rounded-full"
         >
             <img
+                loading="lazy"
                 class="object-cover"
                 src="%%PROFILE%%"
                 alt="user image"
