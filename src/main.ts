@@ -33,8 +33,12 @@ import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
+// TypedJs
+import Typed from 'typed.js';
+
 // Events
 window.addEventListener(`load`, () => {
+    // SwiperJs
     new Swiper('.comments-swiper1', {
         loop: true,
         allowTouchMove: false,
@@ -193,6 +197,22 @@ window.addEventListener(`load`, () => {
                      '/public/images/users/default.webp',
              )}</div>`,
         );
+    });
+
+    // TypedJs
+    new Typed('#hello', {
+        strings: ['سلام...'],
+        typeSpeed: 500,
+        showCursor: true,
+        cursorChar: '|',
+    });
+    new Typed('#introduction', {
+        strings: [
+            'محمد رضا رفیعی هستم، مشاور تحصیلی و فردی ;)',
+        ],
+        typeSpeed: 100,
+        showCursor: true,
+        cursorChar: '|',
     });
 });
 
