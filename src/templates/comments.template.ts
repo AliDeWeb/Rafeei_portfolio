@@ -1,6 +1,6 @@
-export const commentTemplate = `
+const commentTemplate = `
     <div
-        class="grid w-[340px] grid-cols-6 justify-center rounded-xl p-4 font-dana text-black shadow-lg"
+        class="grid w-[300px] md:w-[340px] grid-cols-6 justify-center rounded-xl p-4 font-dana text-black shadow-lg mx-auto"
     >
         <div
             class="col-span-2 flex size-16 h-max justify-center overflow-hidden rounded-full"
@@ -32,3 +32,22 @@ export const commentTemplate = `
         </div>
     </div>
 `;
+
+export const useCommentsTemplate = (
+    comment: string,
+    date: string,
+    name: string,
+    profile: string,
+) => {
+    let template = ``;
+
+    template = commentTemplate.replace(
+        '%%COMMENT%%',
+        comment,
+    );
+    template = template.replace('%%DATE%%', date);
+    template = template.replace('%%NAME%%', name);
+    template = template.replace('%%PROFILE%%', profile);
+
+    return template;
+};
