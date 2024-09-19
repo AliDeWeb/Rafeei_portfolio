@@ -10,11 +10,23 @@ import { useCommentsTemplate } from './templates/comments.template.ts';
 
 // Elements
 const commentsSwiper1Selector: HTMLDivElement =
-    document.querySelector('.comments-swiper-wrapper1')!;
+    document.querySelector(
+        '.comments-swiper-wrapper1',
+    ) as HTMLDivElement;
+
 const commentsSwiper2Selector: HTMLDivElement =
-    document.querySelector('.comments-swiper-wrapper2')!;
+    document.querySelector(
+        '.comments-swiper-wrapper2',
+    ) as HTMLDivElement;
+
 const commentsSwiper3Selector: HTMLDivElement =
-    document.querySelector('.comments-swiper-wrapper3')!;
+    document.querySelector(
+        '.comments-swiper-wrapper3',
+    ) as HTMLDivElement;
+
+const scrollTopBtnSelector = document.getElementById(
+    'scroll-top',
+) as HTMLButtonElement;
 
 // SwiperJs
 import Swiper from 'swiper';
@@ -25,6 +37,7 @@ import 'swiper/css';
 window.addEventListener(`load`, () => {
     new Swiper('.comments-swiper1', {
         loop: true,
+        allowTouchMove: false,
         slidesPerView: 1,
         spaceBetween: 20,
 
@@ -62,6 +75,7 @@ window.addEventListener(`load`, () => {
     });
     new Swiper('.comments-swiper2', {
         loop: true,
+        allowTouchMove: false,
         slidesPerView: 1,
         spaceBetween: 20,
 
@@ -99,6 +113,7 @@ window.addEventListener(`load`, () => {
     });
     new Swiper('.comments-swiper3', {
         loop: true,
+        allowTouchMove: false,
         slidesPerView: 1,
         spaceBetween: 20,
 
@@ -178,5 +193,18 @@ window.addEventListener(`load`, () => {
                      '/public/images/users/default.webp',
              )}</div>`,
         );
+    });
+});
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY)
+        scrollTopBtnSelector.classList.remove('hidden');
+    else scrollTopBtnSelector.classList.add('hidden');
+});
+
+scrollTopBtnSelector.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
     });
 });
