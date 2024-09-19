@@ -98,7 +98,7 @@ window.addEventListener(`load`, () => {
     });
     new Typed('#introduction', {
         strings: [
-            'محمد رضا رفیعی هستم، مشاور تحصیلی و فردی ;)',
+            'حمیدرضا رفیعی هستم، مشاور تحصیلی و فردی ;)',
         ],
         typeSpeed: 100,
     });
