@@ -25,6 +25,10 @@ const scrollTopBtnSelector = document.getElementById(
     'scroll-top',
 ) as HTMLButtonElement;
 
+const videosWrapperSelector = document.getElementById(
+    'videos-wrapper',
+) as HTMLDivElement;
+
 // SwiperJs
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
@@ -71,6 +75,26 @@ const swiperJsOptions = {
 // TypedJs
 import Typed from 'typed.js';
 
+// PlyrJs
+import Plyr from 'plyr';
+import 'plyr/dist/plyr.css';
+const plyrJsConfigs = {
+    controls: [
+        'play',
+        'progress',
+        'current-time',
+        'mute',
+        'volume',
+        'fullscreen',
+    ],
+};
+
+// AosCss
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { videos } from './db/videos.db';
+import { insertVideo } from './templates/videos.template';
+
 // Events
 window.addEventListener(`load`, () => {
     // SwiperJs
@@ -101,6 +125,36 @@ window.addEventListener(`load`, () => {
             'حمیدرضا رفیعی هستم، مشاور تحصیلی و فردی ;)',
         ],
         typeSpeed: 100,
+    });
+
+    // PlyrJs
+    new Plyr('#audio-player', {
+        controls: ['play', 'progress', 'current-time'],
+    });
+
+    videos.slice(0, 4).forEach((el, index) => {
+        insertVideo(el, videosWrapperSelector, index);
+        new Plyr(`#video-${index}`, plyrJsConfigs);
+    });
+
+    // AosCss
+    AOS.init({
+        disable: false,
+        startEvent: 'DOMContentLoaded',
+        initClassName: 'aos-init',
+        animatedClassName: 'aos-animate',
+        useClassNames: false,
+        disableMutationObserver: false,
+        debounceDelay: 50,
+        throttleDelay: 99,
+
+        offset: 120,
+        delay: 0,
+        duration: 400,
+        easing: 'ease',
+        once: false,
+        mirror: false,
+        anchorPlacement: 'top-bottom',
     });
 });
 

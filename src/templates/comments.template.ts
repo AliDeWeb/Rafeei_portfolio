@@ -66,8 +66,7 @@ export const insertComments = (
                  el.comment,
                  el.date,
                  el.name,
-                 el?.img ||
-                     '/public/images/users/default.webp',
+                 el?.img || '/images/users/default.webp',
              )}</div>`,
     );
 };

@@ -12,6 +12,7 @@
     },
     "devDependencies": {
         "@eslint/js": "^9.10.0",
+        "@types/aos": "^3.0.7",
         "@typescript-eslint/eslint-plugin": "^8.6.0",
         "@typescript-eslint/parser": "^8.6.0",
         "autoprefixer": "^10.4.20",
@@ -28,6 +29,8 @@
         "vite": "^5.4.1"
     },
     "dependencies": {
+        "aos": "^2.3.4",
+        "plyr": "^3.7.8",
         "swiper": "^11.1.14",
         "typed.js": "^2.1.0"
     }
