@@ -133,7 +133,20 @@ window.addEventListener(`load`, () => {
     });
 
     videos.slice(0, 4).forEach((el, index) => {
-        insertVideo(el, videosWrapperSelector, index);
+        if (index % 2)
+            insertVideo(
+                el,
+                videosWrapperSelector,
+                index,
+                'justify-end-class',
+            );
+        else
+            insertVideo(
+                el,
+                videosWrapperSelector,
+                index,
+                'justify-start-class',
+            );
         new Plyr(`#video-${index}`, plyrJsConfigs);
     });
 
@@ -149,7 +162,7 @@ window.addEventListener(`load`, () => {
         throttleDelay: 99,
 
         offset: 120,
-        delay: 0,
+        delay: 150,
         duration: 400,
         easing: 'ease',
         once: false,

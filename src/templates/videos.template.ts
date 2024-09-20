@@ -2,7 +2,7 @@ import { video } from '../db/videos.db';
 
 const videoTemplate = `
     <div
-        class="flex items-center justify-start"
+        class="flex items-center %%ALIGN%%"
     >
         <div class="mt-4 max-w-[650px]">
             <h3
@@ -36,11 +36,13 @@ const useVideoTemplate = (
     source: string,
     title: string,
     index: number,
+    alignClass: 'justify-start-class' | 'justify-end-class',
 ) => {
     let template = ``;
 
     template = videoTemplate.replace('%%SOURCE%%', source);
     template = template.replace('%%TITLE%%', title);
+    template = template.replace('%%ALIGN%%', alignClass);
     template = template.replace('%%INDEX%%', `${index}`);
 
     return template;
@@ -50,10 +52,11 @@ export const insertVideo = (
     el: video,
     element: HTMLDivElement,
     index: number,
+    alignClass: 'justify-start-class' | 'justify-end-class',
 ) => {
     element.insertAdjacentHTML(
         `beforeend`,
         `
-             ${useVideoTemplate(el.source, el.title, index)}`,
+             ${useVideoTemplate(el.source, el.title, index, alignClass)}`,
     );
 };

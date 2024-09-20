@@ -25,3 +25,13 @@
         @apply size-full;
     }
 }
+
+@layer components {
+    .justify-start-class {
+        @apply justify-start;
+    }
+
+    .justify-end-class {
+        @apply justify-end;
+    }
+}
