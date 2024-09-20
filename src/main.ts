@@ -131,23 +131,35 @@ window.addEventListener(`load`, () => {
     new Plyr('#audio-player', {
         controls: ['play', 'progress', 'current-time'],
     });
-
+    const players: Plyr[] = [];
     videos.slice(0, 4).forEach((el, index) => {
-        if (index % 2)
-            insertVideo(
-                el,
-                videosWrapperSelector,
-                index,
-                'justify-end-class',
-            );
-        else
-            insertVideo(
-                el,
-                videosWrapperSelector,
-                index,
-                'justify-start-class',
-            );
-        new Plyr(`#video-${index}`, plyrJsConfigs);
+        const justifyClass =
+            index % 2
+                ? 'justify-end-class'
+                : 'justify-start-class';
+
+        insertVideo(
+            el,
+            videosWrapperSelector,
+            index,
+            justifyClass,
+        );
+
+        const videoId = `video-${index}`;
+        const player = new Plyr(
+            `#${videoId}`,
+            plyrJsConfigs,
+        );
+
+        players.push(player);
+
+        player.on('play', () => {
+            players.forEach((otherPlayer) => {
+                if (otherPlayer !== player) {
+                    otherPlayer.pause();
+                }
+            });
+        });
     });
 
     // AosCss

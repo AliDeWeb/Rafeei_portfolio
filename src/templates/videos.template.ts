@@ -19,6 +19,7 @@ const videoTemplate = `
             >
                 <video
                     id="video-%%INDEX%%"
+                    class="video"
                     playsinline
                     controls
                 >
