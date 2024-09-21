@@ -2,9 +2,9 @@ import { video } from '../db/videos.db';
 
 const videoTemplate = `
     <div
-        class="flex items-center %%ALIGN%%"
+        class="mt-6 flex items-center %%ALIGN%%"
     >
-        <div class="mt-4 max-w-[650px]">
+        <div class="mt-4 max-w-[350px]">
             <h3
                 class="mb-4 font-danaBold text-lg text-black"
             >
