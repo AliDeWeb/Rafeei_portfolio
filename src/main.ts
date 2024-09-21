@@ -4,9 +4,11 @@ import './styles/style.css';
 
 // Data
 import { comments } from './db/comments.db';
+import { videos } from './db/videos.db';
 
 // Templates
 import { insertComments } from './templates/comments.template';
+import { insertVideo } from './templates/videos.template';
 
 // Elements
 const commentsSwiper1Selector = document.querySelector(
@@ -92,8 +94,6 @@ const plyrJsConfigs = {
 // AosCss
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { videos } from './db/videos.db';
-import { insertVideo } from './templates/videos.template';
 
 // Events
 window.addEventListener(`load`, () => {
